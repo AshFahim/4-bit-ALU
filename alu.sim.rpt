@@ -1,0 +1,279 @@
+Simulator report for alu
+Tue Apr 25 02:31:01 2023
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------+
+; Simulator Summary                              ;
++-----------------------------+------------------+
+; Type                        ; Value            ;
++-----------------------------+------------------+
+; Simulation Start Time       ; 0 ps             ;
+; Simulation End Time         ; 1.0 us           ;
+; Simulation Netlist Size     ; 81 nodes         ;
+; Simulation Coverage         ;      28.75 %     ;
+; Total Number of Transitions ; 295              ;
+; Simulation Breakpoints      ; 0                ;
+; Family                      ; FLEX10KE         ;
+; Device                      ; EPF10K30ETC144-1 ;
++-----------------------------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Timing     ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      28.75 % ;
+; Total nodes checked                                 ; 81           ;
+; Total output ports checked                          ; 80           ;
+; Total output ports with complete 1/0-value coverage ; 23           ;
+; Total output ports with no 1/0-value coverage       ; 38           ;
+; Total output ports with no 1-value coverage         ; 49           ;
+; Total output ports with no 0-value coverage         ; 46           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                        ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |alu|zero~reg0         ; |alu|zero~reg0         ; data_out0        ;
+; |alu|state[0]          ; |alu|state[0]          ; data_out0        ;
+; |alu|aluResult~1349    ; |alu|aluResult~1349    ; data_out0        ;
+; |alu|aluResult~1350    ; |alu|aluResult~1350    ; data_out0        ;
+; |alu|aluResult~1353    ; |alu|aluResult~1353    ; data_out0        ;
+; |alu|aluResult~1354    ; |alu|aluResult~1354    ; data_out0        ;
+; |alu|aluResult[0]~1355 ; |alu|aluResult[0]~1355 ; data_out0        ;
+; |alu|aluResult~1360    ; |alu|aluResult~1360    ; data_out0        ;
+; |alu|aluResult~1365    ; |alu|aluResult~1365    ; data_out0        ;
+; |alu|aluResult~1366    ; |alu|aluResult~1366    ; data_out0        ;
+; |alu|aluResult~1367    ; |alu|aluResult~1367    ; data_out0        ;
+; |alu|aluResult~1368    ; |alu|aluResult~1368    ; data_out0        ;
+; |alu|aluResult~1369    ; |alu|aluResult~1369    ; data_out0        ;
+; |alu|Mux4~417          ; |alu|Mux4~417          ; data_out0        ;
+; |alu|Mux9~376          ; |alu|Mux9~376          ; data_out0        ;
+; |alu|Mux9~377          ; |alu|Mux9~377          ; data_out0        ;
+; |alu|Mux9~379          ; |alu|Mux9~379          ; data_out0        ;
+; |alu|Mux0~2            ; |alu|Mux0~2            ; data_out0        ;
+; |alu|Mux0~3            ; |alu|Mux0~3            ; data_out0        ;
+; |alu|Mux1~2            ; |alu|Mux1~2            ; data_out0        ;
+; |alu|Mux1~3            ; |alu|Mux1~3            ; data_out0        ;
+; |alu|clk               ; |alu|clk~corein        ; dataout          ;
+; |alu|zero              ; |alu|zero              ; padio            ;
++------------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------+
+; Missing 1-Value Coverage                                           ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |alu|aluResult[0]~reg0 ; |alu|aluResult[0]~reg0 ; data_out0        ;
+; |alu|aluResult[1]~reg0 ; |alu|aluResult[1]~reg0 ; data_out0        ;
+; |alu|aluResult[2]~reg0 ; |alu|aluResult[2]~reg0 ; data_out0        ;
+; |alu|carryx~reg0       ; |alu|carryx~reg0       ; data_out0        ;
+; |alu|Mux9~373          ; |alu|Mux9~373          ; data_out0        ;
+; |alu|Mux7~406          ; |alu|Mux7~406          ; data_out0        ;
+; |alu|Mux7~407          ; |alu|Mux7~407          ; data_out0        ;
+; |alu|aluResult~1356    ; |alu|aluResult~1356    ; data_out0        ;
+; |alu|aluResult~1357    ; |alu|aluResult~1357    ; data_out0        ;
+; |alu|aluResult~1358    ; |alu|aluResult~1358    ; data_out0        ;
+; |alu|aluResult~1359    ; |alu|aluResult~1359    ; data_out0        ;
+; |alu|Mux6~417          ; |alu|Mux6~417          ; data_out0        ;
+; |alu|aluResult~14      ; |alu|aluResult~14      ; data_out0        ;
+; |alu|aluResult~1361    ; |alu|aluResult~1361    ; data_out0        ;
+; |alu|aluResult~1362    ; |alu|aluResult~1362    ; data_out0        ;
+; |alu|aluResult~1363    ; |alu|aluResult~1363    ; data_out0        ;
+; |alu|aluResult~1364    ; |alu|aluResult~1364    ; data_out0        ;
+; |alu|Mux5~417          ; |alu|Mux5~417          ; data_out0        ;
+; |alu|aluResult~16      ; |alu|aluResult~16      ; data_out0        ;
+; |alu|aluResult~18      ; |alu|aluResult~18      ; data_out0        ;
+; |alu|Mux9~374          ; |alu|Mux9~374          ; data_out0        ;
+; |alu|Mux9~375          ; |alu|Mux9~375          ; data_out0        ;
+; |alu|Mux9~378          ; |alu|Mux9~378          ; data_out0        ;
+; |alu|carryx~390        ; |alu|carryx~390        ; data_out0        ;
+; |alu|carryx~391        ; |alu|carryx~391        ; data_out0        ;
+; |alu|carryx~0          ; |alu|carryx~0          ; data_out0        ;
+; |alu|carryx~392        ; |alu|carryx~392        ; data_out0        ;
+; |alu|Mux8~60           ; |alu|Mux8~60           ; data_out0        ;
+; |alu|carryx~393        ; |alu|carryx~393        ; data_out0        ;
+; |alu|carryx~394        ; |alu|carryx~394        ; data_out0        ;
+; |alu|carryx~13         ; |alu|carryx~13         ; data_out0        ;
+; |alu|carryx~395        ; |alu|carryx~395        ; data_out0        ;
+; |alu|Mux8~61           ; |alu|Mux8~61           ; data_out0        ;
+; |alu|opCode[0]         ; |alu|opCode[0]~corein  ; dataout          ;
+; |alu|opCode[2]         ; |alu|opCode[2]~corein  ; dataout          ;
+; |alu|srcB[0]           ; |alu|srcB[0]~corein    ; dataout          ;
+; |alu|srcA[0]           ; |alu|srcA[0]~corein    ; dataout          ;
+; |alu|opCode[1]         ; |alu|opCode[1]~corein  ; dataout          ;
+; |alu|reset             ; |alu|reset~corein      ; dataout          ;
+; |alu|srcA[1]           ; |alu|srcA[1]~corein    ; dataout          ;
+; |alu|srcB[1]           ; |alu|srcB[1]~corein    ; dataout          ;
+; |alu|srcA[2]           ; |alu|srcA[2]~corein    ; dataout          ;
+; |alu|srcB[2]           ; |alu|srcB[2]~corein    ; dataout          ;
+; |alu|srcA[3]           ; |alu|srcA[3]~corein    ; dataout          ;
+; |alu|srcB[3]           ; |alu|srcB[3]~corein    ; dataout          ;
+; |alu|aluResult[0]      ; |alu|aluResult[0]      ; padio            ;
+; |alu|aluResult[1]      ; |alu|aluResult[1]      ; padio            ;
+; |alu|aluResult[2]      ; |alu|aluResult[2]      ; padio            ;
+; |alu|carryx            ; |alu|carryx            ; padio            ;
++------------------------+------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------+
+; Missing 0-Value Coverage                                           ;
++------------------------+------------------------+------------------+
+; Node Name              ; Output Port Name       ; Output Port Type ;
++------------------------+------------------------+------------------+
+; |alu|aluResult[0]~reg0 ; |alu|aluResult[0]~reg0 ; data_out0        ;
+; |alu|aluResult[1]~reg0 ; |alu|aluResult[1]~reg0 ; data_out0        ;
+; |alu|aluResult[2]~reg0 ; |alu|aluResult[2]~reg0 ; data_out0        ;
+; |alu|aluResult[3]~reg0 ; |alu|aluResult[3]~reg0 ; data_out0        ;
+; |alu|carryx~reg0       ; |alu|carryx~reg0       ; data_out0        ;
+; |alu|aluResult~1351    ; |alu|aluResult~1351    ; data_out0        ;
+; |alu|aluResult~1352    ; |alu|aluResult~1352    ; data_out0        ;
+; |alu|Mux7~406          ; |alu|Mux7~406          ; data_out0        ;
+; |alu|Mux7~407          ; |alu|Mux7~407          ; data_out0        ;
+; |alu|aluResult~1356    ; |alu|aluResult~1356    ; data_out0        ;
+; |alu|aluResult~1357    ; |alu|aluResult~1357    ; data_out0        ;
+; |alu|aluResult~1358    ; |alu|aluResult~1358    ; data_out0        ;
+; |alu|aluResult~1359    ; |alu|aluResult~1359    ; data_out0        ;
+; |alu|Mux6~417          ; |alu|Mux6~417          ; data_out0        ;
+; |alu|aluResult~1361    ; |alu|aluResult~1361    ; data_out0        ;
+; |alu|aluResult~1362    ; |alu|aluResult~1362    ; data_out0        ;
+; |alu|aluResult~1363    ; |alu|aluResult~1363    ; data_out0        ;
+; |alu|aluResult~1364    ; |alu|aluResult~1364    ; data_out0        ;
+; |alu|Mux5~417          ; |alu|Mux5~417          ; data_out0        ;
+; |alu|aluResult~18      ; |alu|aluResult~18      ; data_out0        ;
+; |alu|aluResult~1370    ; |alu|aluResult~1370    ; data_out0        ;
+; |alu|Mux9~374          ; |alu|Mux9~374          ; data_out0        ;
+; |alu|Mux9~375          ; |alu|Mux9~375          ; data_out0        ;
+; |alu|Mux9~378          ; |alu|Mux9~378          ; data_out0        ;
+; |alu|carryx~390        ; |alu|carryx~390        ; data_out0        ;
+; |alu|carryx~391        ; |alu|carryx~391        ; data_out0        ;
+; |alu|carryx~392        ; |alu|carryx~392        ; data_out0        ;
+; |alu|Mux8~60           ; |alu|Mux8~60           ; data_out0        ;
+; |alu|carryx~394        ; |alu|carryx~394        ; data_out0        ;
+; |alu|carryx~13         ; |alu|carryx~13         ; data_out0        ;
+; |alu|carryx~395        ; |alu|carryx~395        ; data_out0        ;
+; |alu|Mux8~61           ; |alu|Mux8~61           ; data_out0        ;
+; |alu|Mux7~408          ; |alu|Mux7~408          ; data_out0        ;
+; |alu|opCode[2]         ; |alu|opCode[2]~corein  ; dataout          ;
+; |alu|opCode[1]         ; |alu|opCode[1]~corein  ; dataout          ;
+; |alu|srcB[1]           ; |alu|srcB[1]~corein    ; dataout          ;
+; |alu|srcA[2]           ; |alu|srcA[2]~corein    ; dataout          ;
+; |alu|srcA[3]           ; |alu|srcA[3]~corein    ; dataout          ;
+; |alu|srcB[3]           ; |alu|srcB[3]~corein    ; dataout          ;
+; |alu|aluResult[0]      ; |alu|aluResult[0]      ; padio            ;
+; |alu|aluResult[1]      ; |alu|aluResult[1]      ; padio            ;
+; |alu|aluResult[2]      ; |alu|aluResult[2]      ; padio            ;
+; |alu|aluResult[3]      ; |alu|aluResult[3]      ; padio            ;
+; |alu|carryx            ; |alu|carryx            ; padio            ;
+; |alu|sign              ; |alu|sign              ; padio            ;
+; |alu|aluResult[3]~1404 ; |alu|aluResult[3]~1404 ; data_out0        ;
++------------------------+------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Tue Apr 25 02:31:00 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off alu -c alu
+Info: Using vector source file "E:/alu/alu.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is      28.75 %
+Info: Number of transitions in simulation is 295
+Info: Quartus II Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 161 megabytes
+    Info: Processing ended: Tue Apr 25 02:31:01 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

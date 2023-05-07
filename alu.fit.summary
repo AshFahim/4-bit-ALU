@@ -1,0 +1,11 @@
+Fitter Status : Successful - Tue Apr 25 02:31:09 2023
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Web Edition
+Revision Name : alu
+Top-level Entity Name : alu
+Family : FLEX10KE
+Device : EPF10K30ETC144-1
+Timing Models : Final
+Total logic elements : 61 / 1,728 ( 4 % )
+Total pins : 20 / 102 ( 20 % )
+Total memory bits : 0 / 24,576 ( 0 % )
+Total PLLs : 0

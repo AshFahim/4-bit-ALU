@@ -1,0 +1,368 @@
+Classic Timing Analyzer report for alu
+Tue Apr 25 02:31:11 2023
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                  ;
++------------------------------+-------+---------------+----------------------------------+-------------+-----------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From        ; To        ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------+-----------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 10.700 ns                        ; srcB[3]     ; zero~reg0 ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.300 ns                         ; carryx~reg0 ; carryx    ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.000 ns                         ; opCode[1]   ; state[0]  ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 121.95 MHz ( period = 8.200 ns ) ; state[0]    ; zero~reg0 ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;             ;           ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------+-----------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K30ETC144-1   ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                         ;
++-------+------------------------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From              ; To                ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; 121.95 MHz ( period = 8.200 ns )               ; state[0]          ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 7.500 ns                ;
+; N/A   ; 128.21 MHz ( period = 7.800 ns )               ; state[1]          ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 7.100 ns                ;
+; N/A   ; 129.87 MHz ( period = 7.700 ns )               ; carryx~reg0       ; carryx~reg0       ; clk        ; clk      ; None                        ; None                      ; 7.000 ns                ;
+; N/A   ; 138.89 MHz ( period = 7.200 ns )               ; aluResult[2]~reg0 ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 6.500 ns                ;
+; N/A   ; 144.93 MHz ( period = 6.900 ns )               ; aluResult[3]~reg0 ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 6.200 ns                ;
+; N/A   ; 151.52 MHz ( period = 6.600 ns )               ; aluResult[0]~reg0 ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 5.900 ns                ;
+; N/A   ; 153.85 MHz ( period = 6.500 ns )               ; aluResult[1]~reg0 ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 153.85 MHz ( period = 6.500 ns )               ; carryx~reg0       ; zero~reg0         ; clk        ; clk      ; None                        ; None                      ; 5.800 ns                ;
+; N/A   ; 158.73 MHz ( period = 6.300 ns )               ; state[0]          ; carryx~reg0       ; clk        ; clk      ; None                        ; None                      ; 5.600 ns                ;
+; N/A   ; 163.93 MHz ( period = 6.100 ns )               ; state[1]          ; carryx~reg0       ; clk        ; clk      ; None                        ; None                      ; 5.400 ns                ;
+; N/A   ; 166.67 MHz ( period = 6.000 ns )               ; state[0]          ; aluResult[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.300 ns                ;
+; N/A   ; 169.49 MHz ( period = 5.900 ns )               ; state[1]          ; aluResult[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.200 ns                ;
+; N/A   ; 172.41 MHz ( period = 5.800 ns )               ; state[1]          ; aluResult[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.100 ns                ;
+; N/A   ; 175.44 MHz ( period = 5.700 ns )               ; state[0]          ; aluResult[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 5.000 ns                ;
+; N/A   ; 175.44 MHz ( period = 5.700 ns )               ; state[0]          ; aluResult[3]~1404 ; clk        ; clk      ; None                        ; None                      ; 5.000 ns                ;
+; N/A   ; 178.57 MHz ( period = 5.600 ns )               ; state[0]          ; aluResult[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.900 ns                ;
+; N/A   ; 181.82 MHz ( period = 5.500 ns )               ; state[0]          ; aluResult[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.800 ns                ;
+; N/A   ; 188.68 MHz ( period = 5.300 ns )               ; state[1]          ; aluResult[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.600 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; state[1]          ; aluResult[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.400 ns                ;
+; N/A   ; 196.08 MHz ( period = 5.100 ns )               ; state[1]          ; aluResult[3]~1404 ; clk        ; clk      ; None                        ; None                      ; 4.400 ns                ;
+; N/A   ; 200.00 MHz ( period = 5.000 ns )               ; aluResult[0]~reg0 ; aluResult[0]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.300 ns                ;
+; N/A   ; 204.08 MHz ( period = 4.900 ns )               ; aluResult[1]~reg0 ; aluResult[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.200 ns                ;
+; N/A   ; 212.77 MHz ( period = 4.700 ns )               ; aluResult[2]~reg0 ; aluResult[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 4.000 ns                ;
+; N/A   ; 222.22 MHz ( period = 4.500 ns )               ; carryx~reg0       ; aluResult[2]~reg0 ; clk        ; clk      ; None                        ; None                      ; 3.800 ns                ;
+; N/A   ; 227.27 MHz ( period = 4.400 ns )               ; aluResult[3]~reg0 ; aluResult[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 227.27 MHz ( period = 4.400 ns )               ; aluResult[3]~reg0 ; aluResult[3]~1404 ; clk        ; clk      ; None                        ; None                      ; 3.700 ns                ;
+; N/A   ; 232.56 MHz ( period = 4.300 ns )               ; carryx~reg0       ; aluResult[3]~reg0 ; clk        ; clk      ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 232.56 MHz ( period = 4.300 ns )               ; carryx~reg0       ; aluResult[3]~1404 ; clk        ; clk      ; None                        ; None                      ; 3.600 ns                ;
+; N/A   ; 238.10 MHz ( period = 4.200 ns )               ; carryx~reg0       ; aluResult[1]~reg0 ; clk        ; clk      ; None                        ; None                      ; 3.500 ns                ;
+; N/A   ; Restricted to 250.00 MHz ( period = 4.000 ns ) ; state[0]          ; state[1]          ; clk        ; clk      ; None                        ; None                      ; 1.100 ns                ;
+; N/A   ; Restricted to 250.00 MHz ( period = 4.000 ns ) ; state[1]          ; state[1]          ; clk        ; clk      ; None                        ; None                      ; 0.500 ns                ;
+; N/A   ; Restricted to 250.00 MHz ( period = 4.000 ns ) ; state[0]          ; state[0]          ; clk        ; clk      ; None                        ; None                      ; 0.500 ns                ;
++-------+------------------------------------------------+-------------------+-------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++------------------------------------------------------------------------------+
+; tsu                                                                          ;
++-------+--------------+------------+-----------+-------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From      ; To                ; To Clock ;
++-------+--------------+------------+-----------+-------------------+----------+
+; N/A   ; None         ; 10.700 ns  ; srcB[3]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 10.600 ns  ; srcA[3]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 10.100 ns  ; srcB[1]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 10.100 ns  ; srcA[0]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 9.700 ns   ; srcB[2]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 9.700 ns   ; srcA[0]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 9.600 ns   ; srcB[1]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 9.000 ns   ; srcA[2]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 8.700 ns   ; srcA[1]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 8.400 ns   ; srcA[1]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 8.200 ns   ; srcB[3]   ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 8.200 ns   ; srcB[3]   ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 8.200 ns   ; srcA[0]   ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 8.100 ns   ; srcA[3]   ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 8.100 ns   ; srcA[3]   ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 8.100 ns   ; srcB[3]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 8.100 ns   ; srcB[1]   ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 7.900 ns   ; srcA[3]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 7.300 ns   ; srcB[2]   ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 7.200 ns   ; srcB[2]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 6.800 ns   ; srcA[1]   ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 6.700 ns   ; srcB[0]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 6.700 ns   ; opCode[2] ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 6.600 ns   ; srcA[2]   ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 6.500 ns   ; srcA[2]   ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 6.500 ns   ; srcB[0]   ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 6.500 ns   ; opCode[0] ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 5.100 ns   ; srcB[0]   ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 4.700 ns   ; opCode[1] ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 4.100 ns   ; opCode[2] ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 4.100 ns   ; opCode[2] ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 4.000 ns   ; opCode[2] ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 4.000 ns   ; opCode[2] ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 4.000 ns   ; opCode[2] ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 3.900 ns   ; opCode[0] ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 3.900 ns   ; opCode[0] ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 3.800 ns   ; opCode[0] ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 3.800 ns   ; opCode[0] ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 3.800 ns   ; opCode[0] ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 2.800 ns   ; opCode[1] ; state[1]          ; clk      ;
+; N/A   ; None         ; 2.800 ns   ; opCode[0] ; state[1]          ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[2] ; state[1]          ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[1] ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[1] ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[1] ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[1] ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 2.600 ns   ; opCode[1] ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; aluResult[0]~reg0 ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; aluResult[1]~reg0 ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; aluResult[2]~reg0 ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; aluResult[3]~reg0 ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; zero~reg0         ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset     ; aluResult[3]~1404 ; clk      ;
+; N/A   ; None         ; 2.300 ns   ; opCode[2] ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 2.300 ns   ; opCode[0] ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 2.200 ns   ; opCode[1] ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 2.000 ns   ; reset     ; carryx~reg0       ; clk      ;
+; N/A   ; None         ; 1.200 ns   ; opCode[0] ; state[0]          ; clk      ;
+; N/A   ; None         ; 1.100 ns   ; opCode[2] ; state[0]          ; clk      ;
+; N/A   ; None         ; 1.100 ns   ; opCode[1] ; state[0]          ; clk      ;
++-------+--------------+------------+-----------+-------------------+----------+
+
+
++-----------------------------------------------------------------------------------+
+; tco                                                                               ;
++-------+--------------+------------+-------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From              ; To           ; From Clock ;
++-------+--------------+------------+-------------------+--------------+------------+
+; N/A   ; None         ; 7.300 ns   ; carryx~reg0       ; carryx       ; clk        ;
+; N/A   ; None         ; 6.500 ns   ; aluResult[3]~1404 ; sign         ; clk        ;
+; N/A   ; None         ; 6.500 ns   ; zero~reg0         ; zero         ; clk        ;
+; N/A   ; None         ; 6.200 ns   ; aluResult[2]~reg0 ; aluResult[2] ; clk        ;
+; N/A   ; None         ; 6.200 ns   ; aluResult[1]~reg0 ; aluResult[1] ; clk        ;
+; N/A   ; None         ; 6.000 ns   ; aluResult[3]~reg0 ; aluResult[3] ; clk        ;
+; N/A   ; None         ; 6.000 ns   ; aluResult[0]~reg0 ; aluResult[0] ; clk        ;
++-------+--------------+------------+-------------------+--------------+------------+
+
+
++------------------------------------------------------------------------------------+
+; th                                                                                 ;
++---------------+-------------+-----------+-----------+-------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From      ; To                ; To Clock ;
++---------------+-------------+-----------+-----------+-------------------+----------+
+; N/A           ; None        ; 0.000 ns  ; opCode[2] ; state[0]          ; clk      ;
+; N/A           ; None        ; 0.000 ns  ; opCode[1] ; state[0]          ; clk      ;
+; N/A           ; None        ; -0.100 ns ; opCode[0] ; state[0]          ; clk      ;
+; N/A           ; None        ; -0.700 ns ; opCode[2] ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -0.900 ns ; reset     ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -0.900 ns ; opCode[1] ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -1.000 ns ; opCode[0] ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -1.300 ns ; reset     ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; opCode[2] ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; opCode[2] ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; opCode[2] ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; opCode[2] ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -1.300 ns ; opCode[2] ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -1.400 ns ; opCode[1] ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -1.400 ns ; opCode[1] ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -1.400 ns ; opCode[1] ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[2] ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[2] ; state[1]          ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[1] ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[1] ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[1] ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[0] ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[0] ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[0] ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[0] ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -1.500 ns ; opCode[0] ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -1.600 ns ; opCode[0] ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -1.700 ns ; opCode[1] ; state[1]          ; clk      ;
+; N/A           ; None        ; -1.700 ns ; opCode[0] ; state[1]          ; clk      ;
+; N/A           ; None        ; -2.400 ns ; srcB[0]   ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -3.300 ns ; srcB[0]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -4.500 ns ; srcA[1]   ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -4.800 ns ; srcA[2]   ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -5.200 ns ; srcB[2]   ; aluResult[2]~reg0 ; clk      ;
+; N/A           ; None        ; -5.400 ns ; srcB[0]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -5.500 ns ; srcA[2]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -5.600 ns ; srcA[3]   ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -5.600 ns ; srcA[3]   ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -5.600 ns ; srcB[3]   ; aluResult[3]~reg0 ; clk      ;
+; N/A           ; None        ; -5.600 ns ; srcB[3]   ; aluResult[3]~1404 ; clk      ;
+; N/A           ; None        ; -5.600 ns ; srcA[0]   ; aluResult[0]~reg0 ; clk      ;
+; N/A           ; None        ; -5.700 ns ; srcB[2]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -5.700 ns ; srcB[1]   ; aluResult[1]~reg0 ; clk      ;
+; N/A           ; None        ; -6.500 ns ; srcA[1]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -6.500 ns ; srcA[0]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -6.600 ns ; srcB[3]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -6.800 ns ; srcA[3]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -6.800 ns ; srcA[2]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -7.000 ns ; srcA[3]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -7.000 ns ; srcB[3]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -7.200 ns ; srcB[2]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -7.200 ns ; srcA[1]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -7.700 ns ; srcB[1]   ; zero~reg0         ; clk      ;
+; N/A           ; None        ; -8.200 ns ; srcB[1]   ; carryx~reg0       ; clk      ;
+; N/A           ; None        ; -8.600 ns ; srcA[0]   ; carryx~reg0       ; clk      ;
++---------------+-------------+-----------+-----------+-------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Tue Apr 25 02:31:11 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off alu -c alu
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Info: Clock "clk" has Internal fmax of 121.95 MHz between source register "state[0]" and destination register "zero~reg0" (period= 8.2 ns)
+    Info: + Longest register to register delay is 7.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC1_D32; Fanout = 25; REG Node = 'state[0]'
+        Info: 2: + IC(0.500 ns) + CELL(1.000 ns) = 1.500 ns; Loc. = LC5_D33; Fanout = 1; COMB Node = 'aluResult~1366'
+        Info: 3: + IC(0.100 ns) + CELL(0.800 ns) = 2.400 ns; Loc. = LC2_D33; Fanout = 2; COMB Node = 'aluResult~1367'
+        Info: 4: + IC(0.500 ns) + CELL(1.100 ns) = 4.000 ns; Loc. = LC1_D35; Fanout = 1; COMB Node = 'Mux9~374'
+        Info: 5: + IC(0.100 ns) + CELL(0.800 ns) = 4.900 ns; Loc. = LC2_D35; Fanout = 1; COMB Node = 'Mux9~375'
+        Info: 6: + IC(0.100 ns) + CELL(0.800 ns) = 5.800 ns; Loc. = LC8_D35; Fanout = 1; COMB Node = 'Mux9~377'
+        Info: 7: + IC(0.400 ns) + CELL(0.800 ns) = 7.000 ns; Loc. = LC8_D36; Fanout = 1; COMB Node = 'Mux9~379'
+        Info: 8: + IC(0.100 ns) + CELL(0.400 ns) = 7.500 ns; Loc. = LC2_D36; Fanout = 1; REG Node = 'zero~reg0'
+        Info: Total cell delay = 5.700 ns ( 76.00 % )
+        Info: Total interconnect delay = 1.800 ns ( 24.00 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 1.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_55; Fanout = 9; CLK Node = 'clk'
+            Info: 2: + IC(0.200 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC2_D36; Fanout = 1; REG Node = 'zero~reg0'
+            Info: Total cell delay = 1.300 ns ( 86.67 % )
+            Info: Total interconnect delay = 0.200 ns ( 13.33 % )
+        Info: - Longest clock path from clock "clk" to source register is 1.500 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_55; Fanout = 9; CLK Node = 'clk'
+            Info: 2: + IC(0.200 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC1_D32; Fanout = 25; REG Node = 'state[0]'
+            Info: Total cell delay = 1.300 ns ( 86.67 % )
+            Info: Total interconnect delay = 0.200 ns ( 13.33 % )
+    Info: + Micro clock to output delay of source is 0.300 ns
+    Info: + Micro setup delay of destination is 0.400 ns
+Info: tsu for register "zero~reg0" (data pin = "srcB[3]", clock pin = "clk") is 10.700 ns
+    Info: + Longest pin to register delay is 11.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.800 ns) = 2.800 ns; Loc. = PIN_92; Fanout = 5; PIN Node = 'srcB[3]'
+        Info: 2: + IC(1.900 ns) + CELL(1.100 ns) = 5.800 ns; Loc. = LC5_D33; Fanout = 1; COMB Node = 'aluResult~1366'
+        Info: 3: + IC(0.100 ns) + CELL(0.800 ns) = 6.700 ns; Loc. = LC2_D33; Fanout = 2; COMB Node = 'aluResult~1367'
+        Info: 4: + IC(0.500 ns) + CELL(1.100 ns) = 8.300 ns; Loc. = LC1_D35; Fanout = 1; COMB Node = 'Mux9~374'
+        Info: 5: + IC(0.100 ns) + CELL(0.800 ns) = 9.200 ns; Loc. = LC2_D35; Fanout = 1; COMB Node = 'Mux9~375'
+        Info: 6: + IC(0.100 ns) + CELL(0.800 ns) = 10.100 ns; Loc. = LC8_D35; Fanout = 1; COMB Node = 'Mux9~377'
+        Info: 7: + IC(0.400 ns) + CELL(0.800 ns) = 11.300 ns; Loc. = LC8_D36; Fanout = 1; COMB Node = 'Mux9~379'
+        Info: 8: + IC(0.100 ns) + CELL(0.400 ns) = 11.800 ns; Loc. = LC2_D36; Fanout = 1; REG Node = 'zero~reg0'
+        Info: Total cell delay = 8.600 ns ( 72.88 % )
+        Info: Total interconnect delay = 3.200 ns ( 27.12 % )
+    Info: + Micro setup delay of destination is 0.400 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 1.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_55; Fanout = 9; CLK Node = 'clk'
+        Info: 2: + IC(0.200 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC2_D36; Fanout = 1; REG Node = 'zero~reg0'
+        Info: Total cell delay = 1.300 ns ( 86.67 % )
+        Info: Total interconnect delay = 0.200 ns ( 13.33 % )
+Info: tco from clock "clk" to destination pin "carryx" through register "carryx~reg0" is 7.300 ns
+    Info: + Longest clock path from clock "clk" to source register is 1.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_55; Fanout = 9; CLK Node = 'clk'
+        Info: 2: + IC(0.200 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC5_D32; Fanout = 10; REG Node = 'carryx~reg0'
+        Info: Total cell delay = 1.300 ns ( 86.67 % )
+        Info: Total interconnect delay = 0.200 ns ( 13.33 % )
+    Info: + Micro clock to output delay of source is 0.300 ns
+    Info: + Longest register to pin delay is 5.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC5_D32; Fanout = 10; REG Node = 'carryx~reg0'
+        Info: 2: + IC(1.700 ns) + CELL(3.800 ns) = 5.500 ns; Loc. = PIN_89; Fanout = 0; PIN Node = 'carryx'
+        Info: Total cell delay = 3.800 ns ( 69.09 % )
+        Info: Total interconnect delay = 1.700 ns ( 30.91 % )
+Info: th for register "state[0]" (data pin = "opCode[2]", clock pin = "clk") is 0.000 ns
+    Info: + Longest clock path from clock "clk" to destination register is 1.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_55; Fanout = 9; CLK Node = 'clk'
+        Info: 2: + IC(0.200 ns) + CELL(0.000 ns) = 1.500 ns; Loc. = LC1_D32; Fanout = 25; REG Node = 'state[0]'
+        Info: Total cell delay = 1.300 ns ( 86.67 % )
+        Info: Total interconnect delay = 0.200 ns ( 13.33 % )
+    Info: + Micro hold delay of destination is 0.700 ns
+    Info: - Shortest pin to register delay is 2.200 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.300 ns) = 1.300 ns; Loc. = PIN_56; Fanout = 7; PIN Node = 'opCode[2]'
+        Info: 2: + IC(0.300 ns) + CELL(0.600 ns) = 2.200 ns; Loc. = LC1_D32; Fanout = 25; REG Node = 'state[0]'
+        Info: Total cell delay = 1.900 ns ( 86.36 % )
+        Info: Total interconnect delay = 0.300 ns ( 13.64 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 194 megabytes
+    Info: Processing ended: Tue Apr 25 02:31:11 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
